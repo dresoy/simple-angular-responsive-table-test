@@ -1,0 +1,29 @@
+<div class="table-block">
+  <table class="shadow">
+    <caption>
+      <h3>Table Example</h3>
+    </caption>
+    <thead>
+      <th *ngFor="let c of columns">{{c.headerText}}</th>
+      <!-- <th>Firstname</th>
+      <th>Lastname</th>
+      <th>Age</th> -->
+
+    </thead>
+    <tbody>
+      <tr>
+        <td>Jill</td>
+        <td>Smith</td>
+        <td>50</td>
+      </tr>
+      <tr>
+        <td>Eve</td>
+        <td>Jackson</td>
+        <td>94</td>
+      </tr>
+      <tr *ngFor="let row of rows">
+        <td *ngFor="let c of row">{{c}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,46 @@
+.table-block {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+table {
+    background-color: white; // min-width: 700px;
+    border-collapse: collapse;
+    width: 100%;
+    border-radius: 10px;
+    max-width: calc(100% - 2em);
+    margin: 1em auto;
+    overflow: hidden;
+    caption {
+        background-color: white;
+    }
+    thead {
+        display: table-header-group;
+        vertical-align: middle;
+        border-color: inherit;
+    }
+    tr {
+        border: 1px solid black;
+    }
+    tr:nth-child(even) {
+        background-color: #dddddd;
+        border-top: 1px solid #dee2e6;
+    }
+    td,
+    th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+    th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: rgb(29, 97, 31);
+        color: white;
+    }
+    tr:hover {
+        background-color: #ddd;
+    }
+}
