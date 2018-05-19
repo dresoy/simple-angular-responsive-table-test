@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { DColumn } from '../dcolumn';
+import { markDirtyIfOnPush } from '@angular/core/src/render3/instructions';
 
 @Component({
   selector: 'app-d-table-desktop',
@@ -13,7 +14,41 @@ export class DTableDesktopComponent implements OnInit {
 
   constructor() { }
 
+  viewRows: Array<any>;
+  pages: number = 0;
+
   ngOnInit() {
+    this.setDataRows();
+  }
+
+  setDataRows(): void {
+    if (this.rows.length < 10) {
+      this.viewRows = this.rows;
+    } else {
+      this.setPagination();
+      this.setViewRows(1);
+    }
+  }
+
+  setPagination(): void {
+    let pages = Math.trunc(this.rows.length / 10);
+    let remainder = this.rows.length % 10;
+    if (remainder > 0) { pages += 1; }
+
+    this.pages = pages;
+  }
+
+  setViewRows(page): void {
+    this.viewRows = this.rows.slice(page * 10, this.getLastIndex(page));
+    console.log(this.viewRows.length);
+  }
+
+  private getLastIndex(page): number {
+    if (page < this.pages) {
+      return (page * 10) + 10
+    } else {
+      return this.rows.length;
+    }
   }
 
 }

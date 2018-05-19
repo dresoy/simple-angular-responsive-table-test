@@ -11,19 +11,13 @@
 
     </thead>
     <tbody>
-      <tr>
-        <td>Jill</td>
-        <td>Smith</td>
-        <td>50</td>
-      </tr>
-      <tr>
-        <td>Eve</td>
-        <td>Jackson</td>
-        <td>94</td>
-      </tr>
-      <tr *ngFor="let row of rows">
+      <tr *ngFor="let row of viewRows">
         <td *ngFor="let c of row">{{c}}</td>
       </tr>
     </tbody>
   </table>
 </div>
+
+<app-d-pagination *ngIf="pages > 1" [pages]="pages" (clickCallback)="setViewRows($event)"></app-d-pagination>
+
+pages - {{pages}} - rows {{rows.length}} - viewRows ={{viewRows.length}}
