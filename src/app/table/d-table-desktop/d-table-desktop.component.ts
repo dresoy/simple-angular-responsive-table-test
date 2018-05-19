@@ -16,6 +16,9 @@ export class DTableDesktopComponent implements OnInit {
 
   viewRows: Array<any>;
   pages: number = 0;
+  page: number = 0;
+  from: number;
+  to: number;
 
   ngOnInit() {
     this.setDataRows();
@@ -26,7 +29,7 @@ export class DTableDesktopComponent implements OnInit {
       this.viewRows = this.rows;
     } else {
       this.setPagination();
-      this.setViewRows(1);
+      this.setViewRows(0);
     }
   }
 
@@ -39,8 +42,11 @@ export class DTableDesktopComponent implements OnInit {
   }
 
   setViewRows(page): void {
-    this.viewRows = this.rows.slice(page * 10, this.getLastIndex(page));
-    console.log(this.viewRows.length);
+    this.page = page;
+    this.from = page * 10;
+    this.to = this.getLastIndex(page);
+
+    this.viewRows = this.rows.slice(this.from, this.to);
   }
 
   private getLastIndex(page): number {

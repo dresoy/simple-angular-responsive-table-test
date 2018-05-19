@@ -67,7 +67,9 @@ export class AppComponent {
       ['Dori', 'Urai', ''],
       ['Mercedes', 'Quin', ''],
       ['Drew', 'McKay', ''],
-      ['Becky', 'Lynch', '']
+      ['Becky', 'Lynch', ''],
+      ['Margarita', 'La Cubana', '012301230'],
+      ['Giuseppina', 'Mandato', '0234551230']
     ];
   };
 }

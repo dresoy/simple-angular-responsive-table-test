@@ -20,6 +20,20 @@ table {
         display: table-header-group;
         vertical-align: middle;
         border-color: inherit;
+        th {
+            border: 1px solid #ddd;
+            padding: 8px;
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #1565c0;
+            color: white;
+        }
+    }
+    tbody {
+        tr:hover {
+            background-color: #ddd;
+        }
     }
     tr {
         border: 1px solid black;
@@ -28,19 +42,11 @@ table {
         background-color: #dddddd;
         border-top: 1px solid #dee2e6;
     }
-    td,
-    th {
+    td {
         border: 1px solid #ddd;
         padding: 8px;
     }
-    th {
-        padding-top: 12px;
-        padding-bottom: 12px;
-        text-align: left;
-        background-color: rgb(29, 97, 31);
-        color: white;
-    }
-    tr:hover {
-        background-color: #ddd;
+    tfoot {
+        text-align: center;
     }
 }

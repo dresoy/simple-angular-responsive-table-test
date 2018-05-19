@@ -8,6 +8,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class DPaginationComponent implements OnInit {
 
   @Input() pages: number;
+  @Input() currentPage: number;
   @Output() clickCallback: EventEmitter<number> = new EventEmitter();
 
   viewPages: number[];
