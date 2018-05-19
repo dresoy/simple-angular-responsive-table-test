@@ -1,11 +1,10 @@
-<div class="d-mobile shadow">
-  <div>
-    <strong>First Name</strong>: Broke
+<div class="d-mobile">
+  <div class="title">
+    <h3>Contacts</h3>
   </div>
-  <div>
-    <strong>Last Name</strong>: Strougman
-  </div>
-  <div>
-    <strong>Phone</strong>: 123123
+  <div class="row" *ngFor="let row of data">
+    <div *ngFor="let data of row">
+      <strong>{{data.label}}</strong>: {{data.value}}
+    </div>
   </div>
 </div>

@@ -50,7 +50,7 @@ export class DTableDesktopComponent implements OnInit {
   }
 
   private getLastIndex(page): number {
-    if (page < this.pages) {
+    if (page < this.pages - 1) {
       return (page * 10) + 10
     } else {
       return this.rows.length;

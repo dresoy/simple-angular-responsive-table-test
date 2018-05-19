@@ -1,5 +1,5 @@
 <div class="pagination">
-  <div class="btn-group">
+  <div class="btn-group shadow">
     <button *ngFor="let p of viewPages; let i = index" (click)="callback(i)" [ngClass]="{'selected': currentPage === i}" [disabled]="currentPage === i">
       {{i + 1}}
     </button>

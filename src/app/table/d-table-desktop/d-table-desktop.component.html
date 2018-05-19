@@ -1,7 +1,7 @@
 <div class="table-block">
   <table class="shadow">
     <caption>
-      <h3>Table Example</h3>
+      <h3>Contacts</h3>
     </caption>
     <thead>
       <th *ngFor="let c of columns">{{c.headerText}}</th>
@@ -14,7 +14,7 @@
     <tfoot>
       <tr>
         <td [colSpan]="viewRows[0].length">
-          Records {{from }} to {{to}}
+          Records {{from + 1}} to {{to}}
         </td>
       </tr>
     </tfoot>
@@ -22,5 +22,3 @@
 </div>
 
 <app-d-pagination *ngIf="pages > 1" [pages]="pages" [currentPage]="page" (clickCallback)="setViewRows($event)"></app-d-pagination>
-
-pages - {{pages}} - rows {{rows.length}} - viewRows ={{viewRows.length}}

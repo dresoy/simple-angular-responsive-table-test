@@ -1,0 +1,11 @@
+app-d-table-desktop {
+    @media screen and (max-width: 426px) {
+        display: none;
+    }
+}
+
+app-d-table-mobile {
+    @media screen and (min-width: 426px) {
+        display: none;
+    }
+}
